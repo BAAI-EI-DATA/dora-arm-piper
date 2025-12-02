@@ -1,6 +1,6 @@
 [project]
 name = "dora_arm_piper"
-version = "0.1.0"
+version = "0.0.1"
 description = ""
 authors = [
     {name = "Xiang Yang",email = "ryu-yang@qq.com"}
@@ -10,7 +10,8 @@ requires-python = ">=3.8,<3.14"
 dependencies = [
     "dora-rs-cli (>=0.3.11,<0.4.0)",
     "piper_sdk >= 0.0.8",
-    "logging_mp",
+    "numpy>=1.24.4",
+    "dora-rerun>=0.3.11",
 ]
 
 [tool.setuptools]

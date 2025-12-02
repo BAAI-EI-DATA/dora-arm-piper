@@ -9,8 +9,6 @@ from dora import Node
 from piper_sdk import C_PiperInterface
 
 
-logger = logging_mp.get_logger(__name__)
-
 TEACH_MODE = os.getenv("TEACH_MODE", "False") in ["True", "true"]
 
 
@@ -25,12 +23,12 @@ def enable_fun(piper: C_PiperInterface):
     while not enable_flag:
         enable_flag = piper.EnablePiper()
         
-        logger.info(f"--------------------\n使能状态: {enable_flag} \n--------------------")
+        print(f"--------------------\n使能状态: {enable_flag} \n--------------------")
 
         time.sleep(0.01)
         elapsed_time = time.time() - start_time
         if elapsed_time > timeout:
-            logger.warning("Piper机械臂自动使能超时....")
+            print("Piper机械臂自动使能超时....")
             break
 
 
